@@ -1,0 +1,20 @@
+---
+- name: 마켓컬리
+  blog: https://helloworld.kurly.com/
+  rss: https://helloworld.kurly.com/feed.xml
+  rocketpunch: https://www.rocketpunch.com/companies/thefarmers
+- name: 카카오
+  blog: https://tech.kakao.com/blog/
+  rss: https://tech.kakao.com/feed/
+- name: 카카오 엔터
+  blog: https://fe-developers.kakaoent.com/
+  rss: https://fe-developers.kakaoent.com/rss.xml
+- name: 당근마켓
+  blog: https://medium.com/daangn
+  rss: https://medium.com/feed/daangn
+- name: 카카오 엔터프라이즈
+  blog: https://tech.kakaoenterprise.com/
+  rss: https://tech.kakaoenterprise.com/feed
+- name: 네이버 플레이스
+  blog: https://medium.com/naver-place-dev
+  rss: https://medium.com/feed/naver-place-dev
