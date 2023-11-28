@@ -8,6 +8,7 @@ from utils.og_image import og_image
 from utils.parse_date import parse_date
 from utils.is_one_month_ago import is_one_month_ago
 from datetime import datetime
+import time
 
 now = datetime.now()
 
@@ -23,8 +24,6 @@ def crawl():
         key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ldHRiZ3JjaGZvZWdiYWtvc251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAzNjE1OTEsImV4cCI6MjAxNTkzNzU5MX0._dhLgVkgdYb1gXuHhfTUcGcG14s9Jw3akhPFbVmRiBo"
         supabase: Client = create_client(url, key)
 
-        response = supabase.table('posts').select("*").execute()
-
         for item in community_list:
             name = item["name"]
             rss = item["rss"]
@@ -37,6 +36,8 @@ def crawl():
             feeds = feedparser.parse(rss)
             
             for feed in feeds.entries:
+                print("제목" + feed.title)
+                
                 updated = feed.updated
                 updated = updated.replace('GMT', '+0000')
                 updated = parse_date(updated)
@@ -48,6 +49,8 @@ def crawl():
                 if isOneMonthAgo:
                     data, count = supabase.table('posts').select('*').eq('title', feed.title).execute()
                     isExist = len(data[1]) != 0
+                    
+                    time.sleep(5)
                     
                 
                     if not isExist:
