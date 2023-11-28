@@ -5,6 +5,7 @@ from datetime import datetime, timedelta, timezone
 import pytz
 from bs4 import BeautifulSoup
 import requests
+import ssl
 import yaml
 from utils.og_image import og_image
 from utils.parse_date import parse_date
@@ -24,7 +25,10 @@ response = supabase.table('posts').select("*").execute()
 for item in community_list:
     name = item["name"]
     rss = item["rss"]
-    print(name)
+    
+    if hasattr(ssl, '_create_unverified_context'):
+        ssl._create_default_https_context = ssl._create_unverified_context
+        
     feeds = feedparser.parse(rss)
     
     for feed in feeds.entries:
@@ -32,33 +36,28 @@ for item in community_list:
         updated = updated.replace('GMT', '+0000')
         updated = parse_date(updated)
         updated = updated.replace(tzinfo=pytz.utc)
-        today = datetime.utcnow().replace(tzinfo=pytz.utc)
-
-        date_difference = today - updated
-    
-        isOneMonthAgo = is_one_month_ago(feed.updated.replace('GMT', '+0000'))
-        print(isOneMonthAgo)
-    
-        # if isOneMonthAgo:
-        #     data, count = supabase.table('posts').select('*').eq('title', feed.title).execute()
-        #     isExist = len(data[1]) != 0
-        #     print(data)
-        #     print(isExist)
         
-        #     if not isExist:
-        #         title = feed.title
-        #         description = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)[0:80]
-        #         link = feed.link
-        #         thumbnail = og_image(feed.link)
-        #         post_created_at = feed.updated
+        isOneMonthAgo = is_one_month_ago(updated)
+    
+        if isOneMonthAgo:
+            data, count = supabase.table('posts').select('*').eq('title', feed.title).execute()
+            isExist = len(data[1]) != 0
             
-        #         data = supabase.table('posts').insert({
-        #         "title":title,
-        #         "description":description,
-        #         "link":link,
-        #         "thumbnail":thumbnail,
-        #         "post_created_at":post_created_at,
-        #         "author":name,
-        #         }).execute()
+        
+            if not isExist:
+                title = feed.title
+                description = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)[0:80]
+                link = feed.link
+                thumbnail = og_image(feed.link)
+                post_created_at = feed.updated
                 
-        #         print(data)
+                print("새로추가 : " + title)
+            
+                data = supabase.table('posts').insert({
+                "title":title,
+                "description":description,
+                "link":link,
+                "thumbnail":thumbnail,
+                "post_created_at":post_created_at,
+                "author":name,
+                }).execute()

@@ -2,7 +2,6 @@
 - name: 마켓컬리
   blog: https://helloworld.kurly.com/
   rss: https://helloworld.kurly.com/feed.xml
-  rocketpunch: https://www.rocketpunch.com/companies/thefarmers
 - name: 카카오
   blog: https://tech.kakao.com/blog/
   rss: https://tech.kakao.com/feed/
@@ -21,3 +20,6 @@
 - name: 토스
   blog: https://toss.tech/tech
   rss: https://toss.tech/rss.xml
+- name: 29CM
+  blog: https://medium.com/29cm
+  rss: https://medium.com/feed/29cm
