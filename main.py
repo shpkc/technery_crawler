@@ -1,10 +1,7 @@
 import feedparser
-import os
 from supabase import create_client, Client
-from datetime import datetime, timedelta, timezone
 import pytz
 from bs4 import BeautifulSoup
-import requests
 import ssl
 import yaml
 from utils.og_image import og_image
@@ -38,6 +35,7 @@ for item in community_list:
         updated = updated.replace(tzinfo=pytz.utc)
         
         isOneMonthAgo = is_one_month_ago(updated)
+        
     
         if isOneMonthAgo:
             data, count = supabase.table('posts').select('*').eq('title', feed.title).execute()
