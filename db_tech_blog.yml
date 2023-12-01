@@ -5,7 +5,7 @@
 - name: 카카오
   blog: https://tech.kakao.com/blog/
   rss: https://tech.kakao.com/feed/
-- name: 카카오 엔터
+- name: 카카오 엔터테인먼트
   blog: https://fe-developers.kakaoent.com/
   rss: https://fe-developers.kakaoent.com/rss.xml
 - name: 당근마켓
@@ -26,3 +26,112 @@
 - name: CJ 온스타일
   blog: https://medium.com/cj-onstyle
   rss: https://medium.com/feed/cj-onstyle
+- name: 가비아
+  blog: https://library.gabia.com/
+  rss: https://library.gabia.com/feed
+- name: 강남언니
+  blog: https://blog.gangnamunni.com/blog/tech/
+- name: 구름
+  blog: https://blog.goorm.io/
+- name: 넷마블
+  blog: https://netmarble.engineering/
+  rss: https://netmarble.engineering/feed/
+- name: 다나와
+  blog: https://danawalab.github.io/
+  rss: https://danawalab.github.io/feed
+- name: 더핑크퐁컴퍼니
+  blog: https://medium.com/pinkfong
+  rss: https://medium.com/feed/pinkfong
+- name: 데보션 (DEVOCEAN)
+  blog: https://devocean.sk.com
+- name: 드라마앤컴퍼니
+  blog: http://blog.dramancompany.com/
+  rss: http://blog.dramancompany.com/feed/
+- name: 딜리셔스
+  blog: https://dealicious-inc.github.io/
+  rss: https://dealicious-inc.github.io/feed.xml
+- name: 리디북스
+  blog: https://www.ridicorp.com/story-category/tech-blog/
+  rss: http://www.ridicorp.com/story-category/tech-blog/feed/
+- name: 라인
+  blog: https://techblog.lycorp.co.jp/ko
+  rss: https://techblog.lycorp.co.jp/ko/feed/index.xml
+- name: 마켓컬리
+  blog: https://helloworld.kurly.com/
+  rss: https://helloworld.kurly.com/feed.xml
+- name: 버즈빌
+  blog: https://tech.buzzvil.com/
+  rss: https://tech.buzzvil.com/index.xml
+- name: 번개장터
+  blog: https://medium.com/bunjang-tech-blog
+  rss: https://medium.com/feed/bunjang-tech-blog
+- name: 뱅크샐러드
+  blog: https://blog.banksalad.com/
+  rss: https://blog.banksalad.com/rss.xml
+- name: 쏘카
+  blog: https://tech.socarcorp.kr/
+  rss: https://tech.socarcorp.kr/feed.xml
+- name: 올리브영
+  blog: https://tech.oliveyoung.co.kr/
+  rss: https://tech.oliveyoung.co.kr/feed
+- name: 일레클
+  blog: https://medium.com/elecle-bike
+  rss: https://medium.com/feed/elecle-bike
+- name: 에이비일팔공
+  blog: https://engineering.ab180.co/
+- name: 우아한형제들
+  blog: https://woowabros.github.io
+  rss: https://woowabros.github.io/feed.xml
+- name: 요즘IT
+  blog: https://yozm.wishket.com/magazine/
+- name: 원티드
+  blog: https://medium.com/wantedjobs
+  rss: https://medium.com/feed/wantedjobs
+- name: 제니퍼소프트
+  blog: https://jennifersoft.com/ko/category/blog/tech/
+  rss: https://jennifersoft.com/ko/category/blog/tech/feed/
+- name: 채널코퍼레이션
+  blog: https://channel.io/ko/blog/tag/tech
+  rss: https://channel.io/ko/blog/rss
+- name: 카카오 엔터프라이즈
+  blog: https://tech.kakaoenterprise.com/
+  rss: https://tech.kakaoenterprise.com/rss
+- name: 크몽
+  blog: https://medium.com/kmong
+  rss: https://medium.com/feed/kmong
+- name: 테이블링
+  blog: https://medium.com/tabling-tech
+  rss: https://medium.com/feed/tabling-tech
+- name: 펫프렌즈
+  blog: https://techblog.pet-friends.co.kr/
+  rss: https://techblog.pet-friends.co.kr/feed
+- name: 화해
+  blog: https://blog.hwahae.co.kr/category/all/tech
+  rss: https://blog.hwahae.co.kr/rss.xml
+- name: 하이퍼커넥트
+  blog: https://hyperconnect.github.io/
+  rss: https://hyperconnect.github.io/feed.xml
+- name: 헤이딜러
+  blog: https://medium.com/prnd
+  rss: https://medium.com/feed/prnd
+- name: NHN Toast
+  blog: https://meetup.nhncloud.com/
+  rss: https://meetup.nhncloud.com/rss
+- name: 지마켓
+  blog: https://dev.gmarket.com/
+  rss: https://ebay-korea.tistory.com/rss
+- name: 비브로스
+  blog: https://boostbrothers.github.io/
+  rss: https://boostbrothers.github.io/rss.xml
+- name: 카카오헤어샵
+  blog: https://brunch.co.kr/@purpledev
+  rss: https://brunch.co.kr/rss/@@bkFM
+- name: 스마일게이트 AI
+  blog: https://smilegate.ai/recent/
+  rss: https://smilegate.ai/feed/
+- name: 여기어때
+  blog: https://techblog.gccompany.co.kr/
+  rss: https://techblog.gccompany.co.kr/feed
+- name: 딜라이트룸
+  blog: https://medium.com/@delightroom
+  rss: https://medium.com/feed/@delightroom
