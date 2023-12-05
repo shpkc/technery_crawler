@@ -1,7 +1,5 @@
 from datetime import datetime, timedelta, timezone
 
-
-
 def is_one_month_ago(date_str):
     result = False
     

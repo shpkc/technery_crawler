@@ -52,14 +52,12 @@ def crawl():
                     
                     isOneMonthAgo = is_one_month_ago(updated)
                     
-                
                     if isOneMonthAgo:
                         data, count = supabase.table('posts').select('*').eq('title', feed.title).execute()
                         isExist = len(data[1]) != 0
-                        
-                        time.sleep(2)
-                        
                     
+                        time.sleep(1)
+                                
                         if not isExist:
                             title = feed.title
                             description = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)[0:80]
@@ -67,9 +65,9 @@ def crawl():
                             thumbnail = og_image(feed.link)
                             post_created_at = feed.updated
                             textValue = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)
-                            
+                                
                             print("새로 추가 : " + title)
-                        
+                            
                             data = supabase.table("posts").insert({
                             "title":title,
                             "description":description,
@@ -77,6 +75,8 @@ def crawl():
                             "thumbnail":thumbnail,
                             "post_created_at":post_created_at,
                             "author":name,
+                            "textValue":textValue,
                             }).execute()
 
+                        
 
