@@ -11,9 +11,6 @@
 - name: 당근마켓
   blog: https://medium.com/daangn
   rss: https://medium.com/feed/daangn
-- name: 카카오 엔터프라이즈
-  blog: https://tech.kakaoenterprise.com/
-  rss: https://tech.kakaoenterprise.com/feed
 - name: 네이버 플레이스
   blog: https://medium.com/naver-place-dev
   rss: https://medium.com/feed/naver-place-dev
@@ -79,8 +76,8 @@
 - name: 에이비일팔공
   blog: https://engineering.ab180.co/
 - name: 우아한형제들
-  blog: https://woowabros.github.io
-  rss: https://woowabros.github.io/feed.xml
+  blog: https://techblog.woowahan.com/
+  rss: https://techblog.woowahan.com/feed/
 - name: 요즘IT
   blog: https://yozm.wishket.com/magazine/
 - name: 원티드
@@ -136,4 +133,14 @@
   rss: https://medium.com/feed/@delightroom
 - name: 롯데ON
   blog: https://techblog.lotteon.com/
-  res: https://techblog.lotteon.com/feed
+  rss: https://techblog.lotteon.com/feed
+- name: 카카오페이
+  blog: https://tech.kakaopay.com/
+  rss: https://tech.kakaopay.com/rss
+- name: 올리브영
+  blog: https://oliveyoung.tech/blog/
+- name: 우아한테크코스
+  blog: https://tecoble.techcourse.co.kr/
+  rss: https://tecoble.techcourse.co.kr/rss
+- name: 아임웹
+  blog: https://imweb.me/blog
