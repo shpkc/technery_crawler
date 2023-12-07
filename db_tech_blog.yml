@@ -156,3 +156,8 @@
 - name: 메가존 클라우드
   blog: https://medium.com/@sa_globalblog
   rss: https://medium.com/feed/@sa_globalblog
+= name: OP.GG
+  blog: https://log.op.gg/
+  rss: https://log.op.gg/feed/
+- name: CJ올리브네트웍스
+  blog: https://devinn.dev/blog/
