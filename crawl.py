@@ -43,7 +43,7 @@ def crawl():
                 feeds = feedparser.parse(rss)
                 
                 for feed in feeds.entries:
-                    print("제목" + feed.title)
+                    print("제목 : " + feed.title)
                     
                     updated = feed.updated
                     updated = updated.replace('GMT', '+0000')
@@ -52,11 +52,13 @@ def crawl():
                     
                     isOneMonthAgo = is_one_month_ago(updated)
                     
+                    time.sleep(2)
+                    
                     if isOneMonthAgo:
                         data, count = supabase.table('posts').select('*').eq('title', feed.title).execute()
                         isExist = len(data[1]) != 0
                     
-                        time.sleep(1)
+                        time.sleep(3)
                                 
                         if not isExist:
                             title = feed.title
