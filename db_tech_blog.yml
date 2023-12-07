@@ -144,3 +144,15 @@
   rss: https://tecoble.techcourse.co.kr/rss
 - name: 아임웹
   blog: https://imweb.me/blog
+- name: 핀다
+  blog: https://medium.com/finda-tech
+  rss: https://medium.com/feed/finda-tech
+- name: ZUM
+  blog: https://zuminternet.github.io/
+  rss: https://zuminternet.github.io/feed.xml
+- name: 백패커스
+  blog: https://medium.com/idus-tech
+  rss: https://medium.com/feed/idus-tech
+- name: 메가존 클라우드
+  blog: https://medium.com/@sa_globalblog
+  rss: https://medium.com/feed/@sa_globalblog
