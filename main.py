@@ -1,6 +1,4 @@
 from crawl import crawl
-import schedule
-import time
 import os
 from github_utils import get_github_repo, upload_github_issue
 from datetime import datetime,timedelta
@@ -24,9 +22,6 @@ def main():
     upload_github_issue(repo, issue_title, upload_contents)
     print("Upload Github Issue Success!")
     
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
 
 if __name__ == "__main__":
     main()
