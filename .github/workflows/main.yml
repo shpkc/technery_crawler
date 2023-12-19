@@ -28,13 +28,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: create dotenv
-        run: |
-          touch .env
-          echo "SUPABASE_URL=${{ secrets.SUPABASE_URL }}" >> .env
-          echo "SUPABASE_API_KEY=${{ secrets.SUPABASE_API_KEY }}" >> .env
-          echo "GIT_TOKEN=${{ secrets.GIT_TOKEN }}" >> .env
-
       - name: Run Crawler & Make Issue
         run: |
           python main.py
