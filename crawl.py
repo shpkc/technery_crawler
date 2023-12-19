@@ -6,14 +6,19 @@ import ssl
 import yaml
 from utils.og_image import og_image
 from utils.parse_date import parse_date
-from utils.is_one_month_ago import is_one_month_ago
+from utils.date_utils import is_one_month_ago, is_yesterday
 from datetime import datetime
-import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv(verbose=True)
 
 now = datetime.now()
 
-
 def crawl():
+    
+    issue_body = ''
+
     
     print("크롤링 시작 시간 : ", now)
     
@@ -22,9 +27,10 @@ def crawl():
         
         print("수집중인 블로그 : " + str(len(community_list)) + "개")
 
-        url: str = "https://nettbgrchfoegbakosnu.supabase.co"
-        key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ldHRiZ3JjaGZvZWdiYWtvc251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAzNjE1OTEsImV4cCI6MjAxNTkzNzU5MX0._dhLgVkgdYb1gXuHhfTUcGcG14s9Jw3akhPFbVmRiBo"
-        supabase: Client = create_client(url, key)
+        SUPABASE_URL = os.getenv('SUPABASE_URL')
+        SUPABASE_API_KEY = os.getenv('SUPABASE_API_KEY')
+
+        supabase: Client = create_client(SUPABASE_URL, SUPABASE_API_KEY)
 
         for item in community_list:
             name = item["name"]
@@ -33,8 +39,7 @@ def crawl():
                     
                 rss = item["rss"]
                 
-                
-                
+            
                 print(name + "탐색중")
                 
                 if hasattr(ssl, '_create_unverified_context'):
@@ -43,7 +48,7 @@ def crawl():
                 feeds = feedparser.parse(rss)
                 
                 for feed in feeds.entries:
-                    print("제목 : " + feed.title)
+                    # print("제목 : " + feed.title)
                     
                     updated = feed.updated
                     updated = updated.replace('GMT', '+0000')
@@ -52,21 +57,27 @@ def crawl():
                     
                     isOneMonthAgo = is_one_month_ago(updated)
                     
-                    time.sleep(2)
+                    isYesterday = is_yesterday(updated)
+                                        
+                    title = feed.title
+                    description = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)[0:80]
+                    link = feed.link
+                    thumbnail = og_image(feed.link)
+                    post_created_at = feed.updated
+                    textValue = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)
+                    
+                    if(isYesterday):
+                        content = f"[{title}]({link})" + "\n -" + name + "\n "
+                        issue_body+=content
+                        print(issue_body)
+
                     
                     if isOneMonthAgo:
                         data, count = supabase.table('posts').select('*').eq('title', feed.title).execute()
                         isExist = len(data[1]) != 0
-                    
-                        time.sleep(3)
                                 
                         if not isExist:
-                            title = feed.title
-                            description = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)[0:80]
-                            link = feed.link
-                            thumbnail = og_image(feed.link)
-                            post_created_at = feed.updated
-                            textValue = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)
+                            
                                 
                             print("새로 추가 : " + title)
                             
@@ -80,5 +91,6 @@ def crawl():
                             "textValue":textValue,
                             }).execute()
 
+    return issue_body
                         
 
