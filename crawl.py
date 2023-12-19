@@ -67,7 +67,7 @@ def crawl():
                     textValue = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)
                     
                     if(isYesterday):
-                        content = f"[{title}]({link})" + "\n -" + name + "\n "
+                        content = f"[{title}]({link})" + "\n - " + name + "<br/>\n"
                         issue_body+=content
                         print(issue_body)
 

@@ -2,15 +2,11 @@ name: on_time
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-#   push:
-#     branches:
-#       - main
-# schedule:
-#   - cron: '0 0 * * *'
-# 한국의 자정은 "0 15 * * *"이다
+    branches:
+      - main
+schedule:
+  - cron: "0 8 * * *"
+# 매일 오전 8시 실행
 
 jobs:
   build:
