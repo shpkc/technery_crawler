@@ -28,6 +28,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # Github Repository Secrets를 통해 환경 변수 파일을 생성합니다.
+      - name: Generate Environment Variables File for Production
+        run: |
+          echo "SUPABASE_URL=$SUPABASE_URL" >> .env
+          echo "SUPABASE_API_KEY=$SUPABASE_API_KEY" >> .env
+          echo "GIT_TOKEN=$GIT_TOKEN" >> .env
+        env:
+          REACT_APP_DOMAIN: ${{ secrets.REACT_APP_DOMAIN }}
+          SUPABASE_API_KEY: ${{ secrets.SUPABASE_API_KEY }}
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+
       - name: Run Crawler & Make Issue
         run: |
           python main.py

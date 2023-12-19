@@ -27,8 +27,8 @@ def crawl():
         
         print("수집중인 블로그 : " + str(len(community_list)) + "개")
 
-        SUPABASE_URL = os.environ('SUPABASE_URL')
-        SUPABASE_API_KEY = os.environ('SUPABASE_API_KEY')
+        SUPABASE_URL = os.getenv('SUPABASE_URL')
+        SUPABASE_API_KEY = os.getenv('SUPABASE_API_KEY')
 
         supabase: Client = create_client(SUPABASE_URL, SUPABASE_API_KEY)
 
