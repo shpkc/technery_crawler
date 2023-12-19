@@ -156,8 +156,20 @@
 - name: 메가존 클라우드
   blog: https://medium.com/@sa_globalblog
   rss: https://medium.com/feed/@sa_globalblog
-= name: OP.GG
+- name: OP.GG
   blog: https://log.op.gg/
   rss: https://log.op.gg/feed/
 - name: CJ올리브네트웍스
   blog: https://devinn.dev/blog/
+- name: SK플래닛
+  blog: https://techtopic.skplanet.com/
+  rss: https://techtopic.skplanet.com/rss.xml
+- name: 미소
+  blog: https://blog.miso.kr/
+  rss: https://blog.miso.kr/feed/
+- name: AWS
+  blog: https://aws.amazon.com/ko/blogs/tech/
+  rss: https://aws.amazon.com/ko/blogs/tech/feed/
+- name: 넥슨 UX
+  blog: https://brunch.co.kr/@89ebae3e322e405
+  rss: https://brunch.co.kr/rss/@@c7Re
