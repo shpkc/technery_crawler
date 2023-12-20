@@ -1,9 +1,6 @@
-name: on_time
+name: posts_crawler
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: "0 8 * * *"
 # 매일 오전 8시 실행
