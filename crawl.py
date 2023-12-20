@@ -15,12 +15,9 @@ load_dotenv(verbose=True)
 
 now = datetime.now()
 
-def crawl():
+def crawl_posts():
     
-    issue_body = ''
-
-    
-    print("크롤링 시작 시간 : ", now)
+    issue_body =  f"\n \n"
     
     with open('db_tech_blog.yml') as f:
         community_list = yaml.full_load(f)
@@ -35,11 +32,10 @@ def crawl():
         for item in community_list:
             name = item["name"]
             
+            # 일단 rss 존재하는 블로그부터 수집
             if "rss" in item:
                     
                 rss = item["rss"]
-                
-            
                 print(name + "탐색중")
                 
                 if hasattr(ssl, '_create_unverified_context'):
@@ -48,7 +44,6 @@ def crawl():
                 feeds = feedparser.parse(rss)
                 
                 for feed in feeds.entries:
-                    # print("제목 : " + feed.title)
                     
                     updated = feed.updated
                     updated = updated.replace('GMT', '+0000')
@@ -67,7 +62,7 @@ def crawl():
                     textValue = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)
                     
                     if(isYesterday):
-                        content = f"[{title}]({link})" + "\n - " + name + "<br/>\n"
+                        content = f"[{title}]({link})" +  "\n -"+ name + " <br/>\n "
                         issue_body+=content
                         print(issue_body)
 
@@ -91,6 +86,6 @@ def crawl():
                             "textValue":textValue,
                             }).execute()
 
-    return issue_body
-                        
 
+if __name__ == "__main__":
+    crawl_posts()
