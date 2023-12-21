@@ -2,7 +2,7 @@ name: create_issue
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "0 1 * * *"
 # 매일 오전 8시 실행
 
 jobs:

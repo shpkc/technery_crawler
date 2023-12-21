@@ -17,8 +17,6 @@ now = datetime.now()
 
 def crawl_posts():
     
-    issue_body =  f"\n \n"
-    
     with open('db_tech_blog.yml') as f:
         community_list = yaml.full_load(f)
         
@@ -61,10 +59,6 @@ def crawl_posts():
                     post_created_at = feed.updated
                     textValue = BeautifulSoup(feed.description, 'html.parser').get_text(separator=' ', strip=True)
                     
-                    if(isYesterday):
-                        content = f"[{title}]({link})" +  "\n -"+ name + " <br/>\n "
-                        issue_body+=content
-                        print(issue_body)
 
                     
                     if isOneMonthAgo:
