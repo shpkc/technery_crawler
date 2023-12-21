@@ -2,8 +2,8 @@ name: posts_crawl
 
 on:
   schedule:
-    - cron: "0 15 * * 0"
-  # 매일 자정에 신규 포스트 크롤링
+    - cron: "0 * * * *"
+  # 매 시간마다 크롤링
   workflow_dispatch:
 
 jobs:
