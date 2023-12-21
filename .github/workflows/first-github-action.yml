@@ -1,4 +1,4 @@
-name: Python package
+name: first-github-action
 
 on:
   push:
