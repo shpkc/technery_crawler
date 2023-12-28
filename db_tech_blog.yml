@@ -173,3 +173,18 @@
 - name: 넥슨 UX
   blog: https://brunch.co.kr/@89ebae3e322e405
   rss: https://brunch.co.kr/rss/@@c7Re
+- name: Netflix
+  blog: https://netflixtechblog.com
+  rss: https://netflixtechblog.com/feed
+- name: Meta
+  blog: https://engineering.fb.com/
+  rss: https://engineering.fb.com/feed/
+- name: 요기요
+  blog: https://techblog.yogiyo.co.kr/
+  rss: https://techblog.yogiyo.co.kr/feed/
+- name: SSG
+  blog: https://medium.com/ssgtech
+  rss: https://medium.com/feed/ssgtech
+- name: 콴다
+  blog: https://blog.mathpresso.com/
+  rss: https://blog.mathpresso.com/feed
