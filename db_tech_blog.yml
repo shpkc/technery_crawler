@@ -188,3 +188,6 @@
 - name: 콴다
   blog: https://blog.mathpresso.com/
   rss: https://blog.mathpresso.com/feed
+- name: 스푼라디오
+  blog: https://medium.com/spoontech
+  rss: https://medium.com/feed/spoontech
